@@ -1,11 +1,11 @@
-%define __python /usr/bin/python27
+%define __python /usr/bin/python2.7
 
 # sitelib for noarch packages
 %{!?python_sitelib: %define python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
 
 Name:           python27-virtualenv
 Version:        1.8.4
-Release:        1%{?dist}.vortex
+Release:        2%{?dist}.vortex
 Summary:        Tool to create isolated Python environments
 Vendor:         Vortex RPM
 
@@ -57,6 +57,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sun Mar 03 2013 Ilya Otyutskiy <ilya.otyutskiy@icloud.com> - 1.8.4-2.vortex
+- Rebuilt with IUS python27.
+
 * Fri Feb 15 2013 Ilya A. Otyutskiy <sharp@thesharp.ru> - 1.8.4-1.vortex
 - Update to 1.8.4 and rebuild with Python 2.7.
 
